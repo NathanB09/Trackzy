@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :find_user, only: [:show, :edit, :create, :destroy]
+
   def index
   end
 
@@ -6,6 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @session = Session.new
   end
 
   def create
