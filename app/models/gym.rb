@@ -1,5 +1,5 @@
 class Gym < ApplicationRecord
-  has_many :sessions
-  has_many :users, through: :sessions
-  has_many :exercises, through: :sessions
+  has_many :workouts
+  has_many :users, through: :workouts
+  has_many :exercises, through: :workouts
 end
