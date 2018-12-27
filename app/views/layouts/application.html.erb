@@ -17,7 +17,14 @@
       <% end %>
     <% elsif flash[:notice] %>
       <p style="color: green"><%= flash[:notice] %></p>
+    <% elsif flash[:authorized] %>
+      <p style="color: orange"><%= flash[:authorized] %></p>
     <% end %>
+
+    <% if logged_in? %>
+      <p><%= link_to "My Profile", current_user %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
