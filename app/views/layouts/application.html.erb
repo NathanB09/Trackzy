@@ -11,6 +11,13 @@
 
   <body>
     <h1>Trackzy</h1>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |msg| %>
+        <p style="color: red"><%= msg %></p>
+      <% end %>
+    <% elsif flash[:notice] %>
+      <p style="color: green"><%= flash[:notice] %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
