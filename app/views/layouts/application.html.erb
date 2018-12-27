@@ -11,6 +11,20 @@
 
   <body>
     <h1>Trackzy</h1>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |msg| %>
+        <p style="color: red"><%= msg %></p>
+      <% end %>
+    <% elsif flash[:notice] %>
+      <p style="color: green"><%= flash[:notice] %></p>
+    <% elsif flash[:authorized] %>
+      <p style="color: orange"><%= flash[:authorized] %></p>
+    <% end %>
+
+    <% if logged_in? %>
+      <p><%= link_to "My Profile", current_user %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
