@@ -1,4 +1,6 @@
 <p>Welcome to Trackzy!</p>
 <p>An application for creating custom workouts that work for you</p>
-<p><%= link_to "Login", login_path %></p>
-<p><%= link_to "Sign up", signup_path %></p>
+<% if !logged_in? %>
+  <p><%= link_to "Login", login_path %></p>
+  <p><%= link_to "Sign up", signup_path %></p>
+<% end %>
