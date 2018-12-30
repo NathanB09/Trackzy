@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   resources :users, only: [:new, :create, :show]
 
-  resources :exercises
-  resources :workout_excercises
-  resources :gyms
+  # workouts management
   resources :workouts
+
+  resources :gyms
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
