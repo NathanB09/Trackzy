@@ -24,6 +24,7 @@
     <% if logged_in? %>
       <p><%= link_to "My Profile", current_user %></p>
     <% end %>
+    <%= link_to 'Home', root_path %>
 
     <%= yield %>
   </body>
