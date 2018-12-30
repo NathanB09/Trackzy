@@ -1,7 +1,10 @@
 <h2><%= @user.full_name %></h2>
 
+<h3>Workouts</h3>
+<% @user.workouts.each do |workout| %>
+  <%= link_to workout.name, workout %><br>
+<% end %>
+<br>
 <%= form_tag logout_path do %>
   <%= submit_tag "Logout" %>
 <% end %>
-
-<p><%= link_to 'Home', root_path %></p>
