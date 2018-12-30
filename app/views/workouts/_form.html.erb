@@ -1,0 +1,18 @@
+<%= form_for @workout do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :workout_date %>
+  <%= f.date_select :workout_date %><br>
+
+  <h3>Exercises</h3>
+
+  <%= f.fields_for :workout_exercises do |workout_form| %>
+    <%= workout_form.fields_for :exercise do |exercise_form| %>
+      <%= render 'exercise_fields', f: exercise_form %><br>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+
+<% end %>
