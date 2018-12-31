@@ -2,9 +2,12 @@
 
 <h3>Workouts</h3>
 <% @user.workouts.each do |workout| %>
-  <%= link_to workout.name, workout %><br>
+  <p><%= link_to workout.name, workout %></p>
 <% end %>
 <br>
 <%= form_tag logout_path do %>
   <%= submit_tag "Logout" %>
+<% end %>
+<%= form_tag new_workout_path, method: 'get' do %>
+  <%= submit_tag "New Workout" %>
 <% end %>
