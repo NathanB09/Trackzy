@@ -1,10 +1,20 @@
 <h2><%= @workout.name %></h2>
 <h3><%= @workout.workout_date %></h3>
 
+<% if @user.id != current_user.id %>
+  <p>Workout by: <%= @user.full_name %></p>
+<% end %>
+
 <h4>Exercises</h4>
 <% @workout.exercises.each do |exercise| %>
   Name: <%= exercise.name %><br>
   Sets: <%= exercise.sets %><br>
   Reps: <%= exercise.reps %><br>
   Weight: <%= exercise.weight_kg %><br><br>
+<% end %>
+
+<% if @user.id == current_user.id %>
+  <%= form_tag workout_path(@workout), method: "delete" do %>
+    <%= submit_tag "Delete" %>
+  <% end %>
 <% end %>
