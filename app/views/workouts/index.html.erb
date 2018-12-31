@@ -1,0 +1,4 @@
+<h2>All User Workouts</h2>
+<% @workouts.each do |workout| %>
+  <p><%= link_to workout.name, workout %></p>
+<% end %>

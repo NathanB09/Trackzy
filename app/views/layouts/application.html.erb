@@ -21,10 +21,11 @@
       <p style="color: orange"><%= flash[:authorized] %></p>
     <% end %>
 
-    <% if logged_in? %>
-      <p><%= link_to "My Profile", current_user %></p>
-    <% end %>
     <%= link_to 'Home', root_path %>
+    <%= link_to 'Workouts', workouts_path %>
+    <% if logged_in? %>
+      <%= link_to "My Profile", current_user %>
+    <% end %>
 
     <%= yield %>
   </body>
