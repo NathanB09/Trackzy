@@ -5,6 +5,8 @@ class Workout < ApplicationRecord
   has_many :exercises, through: :workout_exercises
   accepts_nested_attributes_for :workout_exercises, allow_destroy: true
 
+  validates :name, presence: true
+
   def exercise_num(num)
     num.to_i.times { self.workout_exercises.build.build_exercise } if num
   end
