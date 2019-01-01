@@ -14,6 +14,10 @@
 <% end %>
 
 <% if @user.id == current_user.id %>
+  <%= form_tag edit_workout_path(@workout), method: 'get' do %>
+    <%= submit_tag "Edit" %>
+  <% end %>
+
   <%= form_tag workout_path(@workout), method: "delete" do %>
     <%= submit_tag "Delete" %>
   <% end %>
