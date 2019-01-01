@@ -10,10 +10,13 @@ class Workout < ApplicationRecord
   end
 
   def delete_workout
-    self.exercises.each do |exercise|
-      exercise.destroy
-    end
+    self.exercises.each(&:destroy)
     self.workout_exercises.destroy_all
     self.destroy
+  end
+
+  def delete_exercises
+    self.exercises.each(&:destroy)
+    self.workout_exercises.destroy_all
   end
 end
