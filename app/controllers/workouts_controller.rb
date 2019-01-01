@@ -15,13 +15,14 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    workout = Workout.new(workout_params)
-    workout.user_id = current_user.id
-    if workout.valid?
-      workout.save
-      redirect_to workout
+    @workout = Workout.new(workout_params)
+    @workout.user_id = current_user.id
+    if @workout.valid?
+      @workout.save
+      redirect_to @workout
     else
-      render :new
+      flash[:errors] = @workout.errors.full_messages
+      redirect_to new_workout_path
     end
   end
 
@@ -29,13 +30,14 @@ class WorkoutsController < ApplicationController
   end
 
   def update
-    @workout.delete_exercises
     @workout.assign_attributes(workout_params)
     if @workout.valid?
-      @workout.save
+      @workout.delete_exercises
+      @workout.update_attributes(workout_params)
       redirect_to @workout
     else
-      render :edit
+      flash[:errors] = @workout.errors.full_messages
+      redirect_to edit_workout_path(@workout)
     end
   end
 
