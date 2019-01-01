@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # users management
   get '/signup', to: 'users#new', as: 'signup'
   post '/signup', to: 'users#create'
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:index, :new, :create, :show]
 
   # workouts management
   resources :workouts

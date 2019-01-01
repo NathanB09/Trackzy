@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @users = User.all
+  end
+
   def show
-    authorized_for(params[:id])
+    authorized?
   end
 
   def new

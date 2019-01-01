@@ -4,10 +4,13 @@
 <% @user.workouts.each do |workout| %>
   <p><%= link_to workout.name, workout %></p>
 <% end %>
-<br>
-<%= form_tag logout_path do %>
-  <%= submit_tag "Logout" %>
-<% end %>
-<%= form_tag new_workout_path, method: 'get' do %>
-  <%= submit_tag "New Workout" %>
+
+<% if @user.id == current_user.id %>
+  <%= form_tag new_workout_path, method: 'get' do %>
+    <%= submit_tag "New Workout" %>
+  <% end %>
+
+  <%= form_tag logout_path do %>
+    <%= submit_tag "Logout" %>
+  <% end %>
 <% end %>
