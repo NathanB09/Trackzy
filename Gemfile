@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.3.3'
 
 gem 'geocoder'
+gem 'rest-client'
+gem 'json'
 gem 'bootstrap'
 gem 'jquery-rails'
 
