@@ -1,9 +1,0 @@
-<h2>New Gym</h2>
-
-<%= form_tag new_gym_path, method: "get" do %>
-  <p>
-    Please select a nearby gym:
-    <%= select_tag :gym_name, options_for_select(1..10) %>
-    <%= submit_tag "Add" %>
-  </p>
-<% end %>
