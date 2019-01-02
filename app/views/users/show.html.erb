@@ -5,6 +5,11 @@
   <p><%= link_to workout.name, workout %></p>
 <% end %>
 
+<h3>My Gyms</h3>
+<% @user.gyms.each do |gym| %>
+  <p><%= link_to gym.name, gym %></p>
+<% end %>
+
 <% if @user.id == current_user.id %>
   <%= form_tag new_workout_path, method: 'get' do %>
     <%= submit_tag "New Workout" %>
