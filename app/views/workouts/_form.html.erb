@@ -5,6 +5,10 @@
   <%= f.label :workout_date %>
   <%= f.date_field :workout_date %><br>
 
+  <h3>Gym</h3>
+
+  <%= f.collection_select :gym_id, Gym.all, :id, :name %>
+
   <h3>Exercises</h3>
 
   <%= f.fields_for :workout_exercises do |workout_form| %>

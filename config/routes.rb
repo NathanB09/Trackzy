@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   # workouts management
   resources :workouts
 
-  resources :gyms
+  # gyms management
+  get '/gyms/search', to: 'gyms#search'
+  resources :gyms, only: [:index, :show]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
