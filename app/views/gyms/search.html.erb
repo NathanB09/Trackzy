@@ -1,0 +1,20 @@
+<h2>Search Local Gym</h2>
+
+<%= form_tag gyms_search_path, method: "get" do %>
+  <p>
+    Enter postcode:
+    <%= text_field_tag :postcode %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<% if @locals %>
+  <p>Here are your local gyms! Create a new workout <%= link_to 'here.', new_workout_path %></p>
+  <% @locals.each do |gym| %>
+    <p>
+      <%= gym[0] %><br>
+      <%= @gym.get_address(gym[1].join(",")) %>
+    </p>
+    <% Gym.add_gyms(gym[0], gym[1]) %>
+  <% end %>
+<% end %>

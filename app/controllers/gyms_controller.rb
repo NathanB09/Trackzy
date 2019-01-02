@@ -1,5 +1,6 @@
 class GymsController < ApplicationController
-  before_action :find_gym, only: [:show, :edit, :update, :destroy]
+  before_action :find_gym, only: [:show, :destroy]
+  before_action :authorized?
 
   def index
     @gyms = Gym.all
@@ -8,13 +9,17 @@ class GymsController < ApplicationController
   def show
   end
 
+  def search
+    @gym = Gym.new
+    @locals = @gym.local_gyms(params[:postcode]) if params[:postcode]
+  end
+
   def new
     @gym = Gym.new
   end
 
   def create
     @gym = Gym.new(gym_params)
-    @gym.user_id = current_user.id
     if @gym.valid?
       @gym.save
       redirect_to @gym
@@ -22,12 +27,6 @@ class GymsController < ApplicationController
       flash[:errors] = @gym.errors.full_messages
       redirect_to new_gym_path
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy
