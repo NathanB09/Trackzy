@@ -6,6 +6,8 @@ ruby '2.3.3'
 gem 'geocoder'
 gem 'rest-client'
 gem 'json'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

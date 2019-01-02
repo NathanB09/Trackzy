@@ -27,6 +27,7 @@
       <%= link_to 'People', users_path %>
       <%= link_to "My Profile", current_user %>
     <% else %>
+      <%= link_to 'People', login_path %>
       <%= link_to "My Profile", login_path %>
     <% end %>
 
