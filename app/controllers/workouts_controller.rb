@@ -9,7 +9,6 @@ class WorkoutsController < ApplicationController
   end
 
   def new
-    authorized_for(current_user.id)
     @workout = Workout.new
     @workout.exercise_num(params[:exercise_num])
   end

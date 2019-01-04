@@ -104,9 +104,22 @@ body, html {
   overflow: scroll;
 }
 
-.special-bg {
-  // background: url('/images/steps.jpg') no-repeat center center;
-  background-color: #606060;
+.gym-bg {
+  background: url('/images/gym.jpg') no-repeat center center;
+  height: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.workout-bg {
+  background: url('/images/steps.jpg') no-repeat center center;
+  height: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.people-bg {
+  background: url('/images/box-jump.jpg') no-repeat center center;
   height: 100%;
   background-size: cover;
   overflow: scroll;
@@ -132,8 +145,15 @@ body, html {
 }
 
 .workout-form-group {
-  padding-top: 20px;
+  padding-top: 22px;
   width: 40%;
+  margin: auto;
+}
+
+.exercise-form {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  width: 50%;
   margin: auto;
 }
 
@@ -255,6 +275,10 @@ tbody {
   font-size: 20px;
   text-shadow: 0 0 8px #000;
   color: #f2f2f2;
+}
+
+.container {
+  display: grid;
 }
 
 // navbar
