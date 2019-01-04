@@ -26,4 +26,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def analytics
+    @users = User.all
+    @gyms = Gym.all
+    @workouts = Workout.all
+  end
 end
