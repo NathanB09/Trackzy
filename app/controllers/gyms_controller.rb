@@ -4,14 +4,11 @@ class GymsController < ApplicationController
 
   def index
     @gyms = Gym.all
+    @gym = Gym.new
+    @locals = @gym.local_gyms(params[:postcode]) if params[:postcode] && params[:postcode].length > 0
   end
 
   def show
-  end
-
-  def search
-    @gym = Gym.new
-    @locals = @gym.local_gyms(params[:postcode]) if params[:postcode]
   end
 
   def new

@@ -4,9 +4,9 @@
 
     <div class="row user-row">
       <div class="col-lg-6">
-        <div class="card">
-          <div class="card-header hollys-m">Workouts</div>
-          <div class="card-body">
+        <div class="card user-card">
+          <div class="card-header user-card-header hollys-m">Workouts</div>
+          <div class="card-body user-card-body">
             <% @user.workouts.each do |workout| %>
               <%= link_to workout.name, workout, class:"user-links" %>
             <% end %>
@@ -15,9 +15,9 @@
       </div>
 
       <div class="col-lg-6">
-        <div class="card">
-          <div class="card-header hollys-m">My Gyms</div>
-          <div class="card-body">
+        <div class="card user-card">
+          <div class="card-header user-card-header hollys-m">My Gyms</div>
+          <div class="card-body user-card-body">
             <% @user.gyms.each do |gym| %>
               <%= link_to gym.name, gym, class:"user-links" %>
             <% end %>

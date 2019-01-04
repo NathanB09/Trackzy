@@ -1,4 +1,13 @@
-<h2>All User Workouts</h2>
-<% @workouts.each do |workout| %>
-  <p><%= link_to workout.name, workout %></p>
-<% end %>
+<div class="special-bg">
+  <div class="center">
+    <div class="card special-card">
+      <div class="card-header special-card-header hollys-m">Workouts</div>
+
+      <div class="card-body special-card-body">
+        <% @workouts.each do |workout| %>
+          <p><%= link_to workout.name, workout, class:"special-links" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

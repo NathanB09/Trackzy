@@ -61,10 +61,6 @@ div a.heading {
   background-color: rgba(30,30,30,.8);
 }
 
-.navbar-dark {
-  background-color: black;
-}
-
 body, html {
   height: 100%;
 }
@@ -108,8 +104,9 @@ body, html {
   overflow: scroll;
 }
 
-.gym-bg {
-  background: url('/images/steps.jpg') no-repeat center center;
+.special-bg {
+  // background: url('/images/steps.jpg') no-repeat center center;
+  background-color: #606060;
   height: 100%;
   background-size: cover;
   overflow: scroll;
@@ -121,6 +118,22 @@ body, html {
 
 .form-control {
   width: 50%;
+  margin: auto;
+}
+
+.gym-form-control {
+  width: 40%;
+  margin: auto;
+}
+
+.workout-form-control {
+  width: 20%;
+  margin: auto;
+}
+
+.workout-form-group {
+  padding-top: 20px;
+  width: 40%;
   margin: auto;
 }
 
@@ -136,16 +149,36 @@ body, html {
   padding-top: 20px;
 }
 
-.card {
+.user-card {
   width: 60%;
   margin: auto;
   background-color: rgba(0,0,0,0);
 }
 
-.card-header {
+.user-card-header {
   background-color: rgba(30,30,30,.5);
   color: #f2f2f2;
   text-shadow: 0 0 15px #f2f2f2;
+}
+
+.user-card-body {
+  background-color: rgba(51,51,51,.5);
+}
+
+.special-card {
+  width: 45%;
+  margin: auto;
+  background-color: rgba(0,0,0,0);
+}
+
+.special-card-header {
+  background-color: rgba(242,242,242,.8);
+  color: #333;
+  text-shadow: 0 0 15px #333;
+}
+
+.special-card-body {
+  background-color: rgba(242,242,242,.6);
 }
 
 .user-heading {
@@ -171,10 +204,6 @@ body, html {
   color: #f2f2f2;
 }
 
-.card-body {
-  background-color: rgba(51,51,51,.5);
-}
-
 .user-links {
   color: black;
   text-decoration: none;
@@ -184,6 +213,19 @@ body, html {
 }
 
 .user-links:hover {
+  text-decoration: none;
+  color: #ff5757;
+}
+
+.special-links {
+  color: black;
+  text-decoration: none;
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+}
+
+.special-links:hover {
   text-decoration: none;
   color: #ff5757;
 }
@@ -231,7 +273,7 @@ tbody {
   font-size: 17px;
 }
 
-.topnav a:hover:not(.heading) {
+.topnav a:hover:not(.heading):not(.nav-right) {
   background-color: #111;
   color: white;
 }
@@ -258,7 +300,7 @@ a.nav-right {
   color: #ff5757;
 }
 
-div a.nav-right:hover {
+a.nav-right:hover {
   background-color: #ff5757;
   color: #333;
 }
