@@ -1,13 +1,13 @@
 <%= form_for @workout do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <div class="workout-form-group">
+    <%= f.text_field :name, placeholder:"Workout Name", class:"form-control" %><br>
 
-  <%= f.label :workout_date %>
-  <%= f.date_field :workout_date %><br>
+    <%= f.date_field :workout_date, class:"form-control" %><br>
+  </div>
 
   <h3>Gym</h3>
 
-  <%= f.collection_select :gym_id, Gym.all, :id, :name %>
+  <%= f.collection_select :gym_id, Gym.all, :id, :name, {:include_blank => true}, {:class => 'form-control workout-form-control'} %>
 
   <h3>Exercises</h3>
 
@@ -17,6 +17,6 @@
     <% end %>
   <% end %>
 
-  <%= f.submit %>
+  <%= f.submit "Submit", {class:"btn btn-outline-danger btn-lg"} %>
 
 <% end %>

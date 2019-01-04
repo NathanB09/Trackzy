@@ -1,11 +1,18 @@
-<h2>New Workout</h2>
+<div class="">
+  <div class="center">
+    <h2 class="hollys-m">New Workout</h2>
 
-<%= form_tag new_workout_path, method: "get" do %>
-  <p>
-    How many exercises would you like to add:
-    <%= select_tag :exercise_num, options_for_select(1..10) %>
-    <%= submit_tag "Add" %>
-  </p>
-<% end %>
+    <%= form_tag new_workout_path, method: "get" do %>
+      <p class="hollys-xs">How many exercises would you like to add:</p>
 
-<%= render 'form' %>
+      <div class="input-group workout-form-control">
+        <%= select_tag :exercise_num, options_for_select(1..10), class:"form-control" %>
+        <div class="input-group-append">
+          <%= submit_tag "Add", class:"btn btn-outline-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render 'form' %>
+  </div>
+</div>
