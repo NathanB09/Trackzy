@@ -1,14 +1,17 @@
 <div class="home-bg">
-  <!-- <img src="/images/trackzy.png" alt="logo" class="mx-auto d-block"> -->
-  <div class="center" style="padding-top: 150px">
-    <p class="hollys-lg">Welcome to Trackzy!</p>
-    <p class="hollys-m h-color">Find gyms close by, wherever you are</p>
-    <p class="hollys-m h-color">Create custom workouts that work for you</p>
-    <% if !logged_in? %>
-      <div class="btn-group">
-        <%= link_to "Login", login_path, class:"btn btn-outline-danger btn-lg home-btn" %>
-        <%= link_to "Sign up", signup_path, class:"btn btn-outline-danger btn-lg home-btn" %>
+  <div class="center" style="padding-top:250px">
+    <div class="card user-card">
+      <div class="card-body home-card-body">
+        <p class="home-card-header hollys-lg-alt">Welcome to Trackzy!</p>
+        <p class="home-card-sub hollys-m">Find gyms close by, wherever you are</p>
+        <p class="home-card-sub hollys-m">Create custom workouts that work for you</p>
+        <% if !logged_in? %>
+          <div class="btn-group">
+            <%= link_to "Login", login_path, class:"btn btn-outline-danger btn-lg home-btn" %>
+            <%= link_to "Sign up", signup_path, class:"btn btn-outline-danger btn-lg home-btn" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

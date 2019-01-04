@@ -21,17 +21,21 @@ class Gym < ApplicationRecord
 
   def local_gyms(postcode)
     string = get_coordinates(postcode)
-    gyms_hash = get_data_from_api_gyms_nearby_search(string)
-    gyms_hash.each do |gym, location|
-      results = Geocoder.search([location[0], location[1]])
-      results.first.address
+    if string
+      gyms_hash = get_data_from_api_gyms_nearby_search(string)
+      gyms_hash.each do |gym, location|
+        results = Geocoder.search([location[0], location[1]])
+        results.first.address
+      end
+      gyms_hash
+    else
+      string
     end
-    gyms_hash
   end
 
   def get_coordinates(search_term)
     results = Geocoder.search(search_term)
-    results.first.coordinates.join(",")
+    results.first.coordinates.join(",") if results.first
   end
 
   def get_address(coordinates)

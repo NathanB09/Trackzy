@@ -5,7 +5,7 @@
     <div class="row user-row">
       <div class="col-lg-6">
         <div class="card user-card">
-          <div class="card-header user-card-header hollys-m">Workouts (<%=Workout.select(@user.id).length%>)</div>
+          <div class="card-header user-card-header hollys-m">Workouts (<%= @user.workouts.length %>)</div>
           <div class="card-body user-card-body">
             <% @user.workouts.each do |workout| %>
               <%= link_to workout.name, workout, class:"user-links" %>
@@ -16,13 +16,7 @@
 
       <div class="col-lg-6">
         <div class="card user-card">
-          <% gyms = [] %>
-          <% Workout.select(@user.id).each do |gym|%>
-          <% gyms << gym %>
-          <% end %>
-          <% count = gyms.uniq.length %>
-
-          <div class="card-header user-card-header hollys-m">My Gyms (<%=count%>)</div>
+          <div class="card-header user-card-header hollys-m">My Gyms (<%= @user.gyms.count %>)</div>
           <div class="card-body user-card-body">
             <% @user.gyms.each do |gym| %>
               <%= link_to gym.name, gym, class:"user-links" %>

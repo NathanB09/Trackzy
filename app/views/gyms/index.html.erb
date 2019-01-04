@@ -1,4 +1,4 @@
-<div class="gym-bg">
+<div class="gyms-bg">
   <div class="center">
     <div class="card special-card">
       <div class="card-header special-card-header hollys-m">Gyms</div>
@@ -7,7 +7,7 @@
 
         <%= form_tag gyms_path, method: "get" do %>
           <div class="input-group gym-form-control">
-            <%= text_field_tag :postcode, nil, placeholder:"Postcode", class:"form-control" %>
+            <%= text_field_tag :postcode, nil, placeholder:"Postcode, Town", class:"form-control" %>
             <div class="input-group-append">
               <%= submit_tag "Search", class:"btn btn-outline-danger btn-sm" %>
             </div>
@@ -20,11 +20,17 @@
             <% this_gym = Gym.find_by(name: gym[0]) %>
             <p><%= link_to this_gym.name, this_gym, class:"special-links" %></p>
           <% end %>
+        <% elsif flash[:invalid] %>
+          <div class="alert alert-danger">
+            <strong><%= flash[:invalid] %></strong>
+          </div>
         <% else %>
           <% @gyms.each do |gym| %>
             <p><%= link_to gym.name, gym, class:"special-links" %></p>
           <% end %>
         <% end %>
+
+
 
       </div>
     </div>

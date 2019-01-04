@@ -2,6 +2,15 @@
 
   <div class="col-lg-6">
     <div class="hollys-xs center signup-padding">
+
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |msg| %>
+        <div class="alert alert-danger">
+          <strong><%= msg %></strong>
+        </div>
+        <% end %>
+      <% end %>
+
       <h2 class="hollys-big">Sign up</h2>
 
       <%= form_for @user do |f| %>

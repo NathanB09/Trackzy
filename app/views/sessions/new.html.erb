@@ -6,6 +6,13 @@
 
   <div class="col-lg-6">
     <div class="hollys-xs center login-padding">
+
+      <% if flash[:invalid] %>
+        <div class="alert alert-danger">
+          <strong><%= flash[:invalid] %></strong>
+        </div>
+      <% end %>
+
       <h2 class="hollys-big">Login</h2>
 
       <%= form_tag login_path do %>
@@ -17,7 +24,7 @@
           <%= password_field_tag :password, nil, placeholder: "Password", class:"form-control" %>
         </div>
 
-        <%= submit_tag "login", class:"btn btn-outline-danger btn-lg home-btn" %>
+        <%= submit_tag "Login", class:"btn btn-outline-danger btn-lg home-btn" %>
       <% end %>
 
       <p style="padding-top: 20px">Don't have an account? <%= link_to "Sign up", signup_path %></p>

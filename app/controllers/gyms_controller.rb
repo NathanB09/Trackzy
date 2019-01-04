@@ -6,6 +6,7 @@ class GymsController < ApplicationController
     @gyms = Gym.all
     @gym = Gym.new
     @locals = @gym.local_gyms(params[:postcode]) if params[:postcode] && params[:postcode].length > 0
+    flash[:invalid] = "Invalid postcode or town" if params[:postcode] && params[:postcode].length <= 0
   end
 
   def show
