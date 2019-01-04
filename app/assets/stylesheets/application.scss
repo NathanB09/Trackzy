@@ -12,3 +12,253 @@
  *
  */
 @import "bootstrap";
+// @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Staatliches');
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Staatliches|Ubuntu');
+
+div a.heading {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 35px;
+  color: #ff5757;
+}
+
+.hollys-lg {
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 40px;
+}
+
+.hollys-m {
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+}
+
+.hollys-s {
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+}
+
+.hollys-xs {
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+}
+
+.center {
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.home-btn {
+  width: 200px;
+}
+
+.workout-btn {
+  width: 200px;
+  background-color: rgba(30,30,30,.8);
+}
+
+.navbar-dark {
+  background-color: black;
+}
+
+body, html {
+  height: 100%;
+}
+
+.home-bg {
+  background: url('/images/beach_starjump.jpg') no-repeat center center;
+  height: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.user-bg {
+  background: url('/images/beach.jpg') no-repeat center center;
+  height: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.login-bg {
+  background: url('/images/jumping.jpg');
+  height: 200%;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  overflow: scroll;
+}
+
+.signup-bg {
+  background: url('/images/signup.jpg');
+  height: 200%;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  overflow: scroll;
+}
+
+.workout-bg {
+  background: url('/images/workout.jpg') no-repeat center center;
+  height: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.gym-bg {
+  background: url('/images/steps.jpg') no-repeat center center;
+  height: 100%;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.login-padding {
+  padding-top: 35%;
+}
+
+.form-control {
+  width: 50%;
+  margin: auto;
+}
+
+.signup-padding {
+  padding-top: 25%;
+}
+
+.h-color {
+  color: grey;
+}
+
+.user-row {
+  padding-top: 20px;
+}
+
+.card {
+  width: 60%;
+  margin: auto;
+  background-color: rgba(0,0,0,0);
+}
+
+.card-header {
+  background-color: rgba(30,30,30,.5);
+  color: #f2f2f2;
+  text-shadow: 0 0 15px #f2f2f2;
+}
+
+.user-heading {
+  text-shadow: 0 0 80px #333;
+  color: #333;
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 45px;
+  padding-top: 30px;
+}
+
+.workout-heading {
+  text-shadow: 0 0 10px #000;
+  color: #f2f2f2;
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 45px;
+  text-decoration: none;
+}
+
+.workout-heading:hover {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.card-body {
+  background-color: rgba(51,51,51,.5);
+}
+
+.user-links {
+  color: black;
+  text-decoration: none;
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+}
+
+.user-links:hover {
+  text-decoration: none;
+  color: #ff5757;
+}
+
+.table {
+  width: 60%;
+  margin: auto;
+  background-color: rgba(0,0,0,0);
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: rgba(30,30,30,0.8);
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  // text-align: left;
+  font-size: 30px;
+  text-shadow: 0 0 8px #000;
+  color: #f2f2f2;
+}
+
+tbody {
+  background-color: rgba(51,51,51,0.8);
+  // font-family: 'Staatliches', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  // text-align: left;
+  font-size: 20px;
+  text-shadow: 0 0 8px #000;
+  color: #f2f2f2;
+}
+
+// navbar
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover:not(.heading) {
+  background-color: #111;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  padding-top: 0.4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+a.nav-right {
+  color: #ff5757;
+}
+
+div a.nav-right:hover {
+  background-color: #ff5757;
+  color: #333;
+}

@@ -1,21 +1,30 @@
-<h2><%= @user.full_name %></h2>
+<div class="user-bg">
+  <div class="center">
+    <h2 class="user-heading"><%= @user.full_name %></h2>
 
-<h3>Workouts</h3>
-<% @user.workouts.each do |workout| %>
-  <p><%= link_to workout.name, workout %></p>
-<% end %>
+    <div class="row user-row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header hollys-m">Workouts</div>
+          <div class="card-body">
+            <% @user.workouts.each do |workout| %>
+              <%= link_to workout.name, workout, class:"user-links" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
-<h3>My Gyms</h3>
-<% @user.gyms.each do |gym| %>
-  <p><%= link_to gym.name, gym %></p>
-<% end %>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header hollys-m">My Gyms</div>
+          <div class="card-body">
+            <% @user.gyms.each do |gym| %>
+              <%= link_to gym.name, gym, class:"user-links" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<% if @user.id == current_user.id %>
-  <%= form_tag new_workout_path, method: 'get' do %>
-    <%= submit_tag "New Workout" %>
-  <% end %>
-
-  <%= form_tag logout_path do %>
-    <%= submit_tag "Logout" %>
-  <% end %>
-<% end %>
+  </div>
+</div>

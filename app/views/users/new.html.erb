@@ -1,19 +1,36 @@
-<h2>Sign Up</h2>
+<div class="row">
 
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br>
+  <div class="col-lg-6">
+    <div class="hollys-xs center signup-padding">
+      <h2 class="hollys-big">Sign up</h2>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br>
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.text_field :first_name, placeholder: "First Name", class:"form-control" %>
+        </div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
+        <div class="form-group">
+          <%= f.text_field :last_name, placeholder: "Last Name", class:"form-control" %>
+        </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
+        <div class="form-group">
+          <%= f.text_field :email, placeholder: "Email", class:"form-control" %>
+        </div>
 
-  <%= f.submit "Sign up" %>
-<% end %>
+        <div class="form-group">
+          <%= f.password_field :password, placeholder: "Password", class:"form-control" %>
+        </div>
 
-<p>Already have an account? <%= link_to "Login", login_path %></p>
+        <%= f.submit "Sign up", class:"btn btn-outline-danger btn-lg home-btn" %>
+      <% end %>
+
+      <p style="padding-top: 20px">Already have an account? <%= link_to "Login", login_path %></p>
+    </div>
+  </div>
+
+  <div class="col-lg-6 ">
+    <div class="signup-bg">
+    </div>
+  </div>
+
+</div>

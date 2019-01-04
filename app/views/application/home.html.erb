@@ -1,6 +1,14 @@
-<p>Welcome to Trackzy!</p>
-<p>An application for creating custom workouts that work for you</p>
-<% if !logged_in? %>
-  <p><%= link_to "Login", login_path %></p>
-  <p><%= link_to "Sign up", signup_path %></p>
-<% end %>
+<div class="home-bg">
+  <!-- <img src="/images/trackzy.png" alt="logo" class="mx-auto d-block"> -->
+  <div class="center" style="padding-top: 150px">
+    <p class="hollys-lg">Welcome to Trackzy!</p>
+    <p class="hollys-m h-color">Find gyms close by</p>
+    <p class="hollys-m h-color">Create custom workouts that work for you</p>
+    <% if !logged_in? %>
+      <div class="btn-group">
+        <%= link_to "Login", login_path, class:"btn btn-outline-danger btn-lg home-btn" %>
+        <%= link_to "Sign up", signup_path, class:"btn btn-outline-danger btn-lg home-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

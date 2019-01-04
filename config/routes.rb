@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # sessions management
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
   post '/logout', to: 'sessions#destroy'
 
   # users management
