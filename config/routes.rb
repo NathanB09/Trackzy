@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'application#home'
+  get '/analytics', to: 'application#analytics'
+
 
   # sessions management
   get '/login', to: 'sessions#new'

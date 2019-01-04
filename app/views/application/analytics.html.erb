@@ -1,0 +1,33 @@
+<div class="user-bg">
+  <div class="center">
+    <% if @users.length > 1 %>
+    <h2 class="user-heading">Trackzy has <%= @users.length %> clients!</h2>
+    <% elsif @users.length == 1 %>
+    <h2 class="user-heading">Trackzy has 1 client!</h2>
+    <% end %>
+    <div class="row user-row">
+      <div class="col-lg-6">
+        <div class="card user-card">
+          <div class="card-header user-card-header hollys-m">Client workouts</div>
+          <div class="card-body user-card-body">
+            <% if @workouts.length == 1 %>
+            There is 1 recorded workout on Trackzy!
+            <% elsif @workouts.length >1 %>
+            There are <%=@workouts.length%> recorded workouts on Trackzy!
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card user-card">
+          <div class="card-header user-card-header hollys-m">Client gyms</div>
+          <div class="card-body user-card-body">
+            Trackzy client searches have covered <%= @gyms.length%> unique gyms!
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
